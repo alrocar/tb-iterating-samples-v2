@@ -1,0 +1,19 @@
+
+    ##################################################
+    ###   Visit https://github.com/tinybirdco/ci   ###
+    ###   for more details or custom CI/CD         ###
+    ##################################################
+
+    name: Tinybird - CD Workflow
+
+    on:
+      workflow_dispatch:
+    jobs:
+      staging_cd:  # deploy changes to staging workspace 'st_wask_versions_v2'
+        uses: tinybirdco/ci/.github/workflows/cd.yml@v1.1.4
+        with:
+          tb_deploy: false
+          data_project_dir: .
+        secrets:
+          admin_token: ${{ secrets.ST_ADMIN_TOKEN }}  # set admin token associated to an account in GitHub secrets
+          tb_host: https://api.us-east.aws.tinybird.co
