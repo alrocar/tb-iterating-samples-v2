@@ -4,7 +4,7 @@
     ###   for more details or custom CI/CD         ###
     ##################################################
 
-    name: Tinybird - CD Workflow
+    name: Tinybird - Staging CD Workflow
 
     on:
       workflow_dispatch:
