@@ -5,8 +5,9 @@
     pipe:
         name: top_pages
         params:
-            date_from: 2033-09-12 05:53:58
-            date_to: 2033-09-12 05:54:58
+            date_from: 2033-09-12
+            date_to: 2033-09-13
+            element: 1
     sql: |
         SELECT
             count() as c
