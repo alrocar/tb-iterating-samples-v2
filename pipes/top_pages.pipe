@@ -31,7 +31,7 @@ SQL >
             and date <= today()
           {% end %}
           {% if defined(element) %}
-            and element = {{String(element, description="Element to filter top pages", required=False)}}
+            and element = {{UInt8(element, description="Element to filter top pages", required=False)}}
           {% end %}
         group by
           pathname
