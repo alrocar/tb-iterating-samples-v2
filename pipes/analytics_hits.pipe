@@ -23,7 +23,7 @@ SQL >
       JSONExtractString(payload, 'pathname') as pathname,
       JSONExtractString(payload, 'href') as href,
       lower(JSONExtractString(payload, 'user-agent')) as user_agent,
-      JSONExtractUInt(payload, 'element') as element
+      toUInt8OrZero(JSONExtractUInt(payload, 'element')) as element
     FROM
       analytics_events
     where action = 'page_hit'
