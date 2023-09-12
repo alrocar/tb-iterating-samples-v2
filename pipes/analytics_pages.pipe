@@ -1,3 +1,5 @@
+VERSION 1
+
 NODE analytics_pages_1
 DESCRIPTION >
     Aggregate by pathname and calculate session and hits
@@ -11,14 +13,16 @@ SQL >
         location,
         pathname,
         uniqState(session_id) AS visits,
-        countState() AS hits
+        countState() AS hits,
+        element
     FROM analytics_hits
     GROUP BY
         date,
         device,
         browser,
         location,
-        pathname
+        pathname,
+        element
 
 TYPE materialized
 DATASOURCE analytics_pages_mv

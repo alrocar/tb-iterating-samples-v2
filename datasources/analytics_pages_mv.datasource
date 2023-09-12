@@ -6,9 +6,10 @@ SCHEMA >
     `browser` String,
     `location` String,
     `pathname` String,
+    `element` UInt8,
     `visits` AggregateFunction(uniq, String),
     `hits` AggregateFunction(count)
 
 ENGINE "AggregatingMergeTree"
 ENGINE_PARTITION_KEY "toYYYYMM(date)"
-ENGINE_SORTING_KEY "date, device, browser, location, pathname"
+ENGINE_SORTING_KEY "date, device, browser, location, pathname, element"

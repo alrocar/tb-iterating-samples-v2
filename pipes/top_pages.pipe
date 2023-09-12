@@ -30,6 +30,9 @@ SQL >
           {% else %}
             and date <= today()
           {% end %}
+          {% if defined(element) %}
+            and element = {{String(element, description="Element to filter top pages", required=False)}}
+          {% end %}
         group by
           pathname
         order by
