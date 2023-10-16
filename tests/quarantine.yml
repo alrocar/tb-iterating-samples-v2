@@ -8,3 +8,12 @@
         FROM analytics_events_quarantine
         HAVING
             c <= 0
+
+- copy_is_executed:
+    max_bytes_read: null
+    max_time: null
+    sql: |
+        SELECT count() c, sum(rows) rows
+        FROM datasources_ops_log
+        WHERE datasource_name = 'analytics_events'
+        HAVING rows != 74 and c != 1
