@@ -6,5 +6,5 @@
         SELECT
             count() as c
         FROM analytics_events_quarantine
-        WHERE
+        HAVING
             c <= 0
