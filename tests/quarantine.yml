@@ -14,6 +14,6 @@
     max_time: null
     sql: |
         SELECT count() c, sum(rows) rows
-        FROM datasources_ops_log
+        FROM tinybird.datasources_ops_log
         WHERE datasource_name = 'analytics_events'
         HAVING rows != 74 and c != 1
