@@ -1,0 +1,13 @@
+NODE copy_quarantine
+SQL >
+    SELECT
+      fromUnixTimestamp64Milli(timestamp * 1000) timestamp,
+      session_id,
+      action,
+      version,
+      payload
+    FROM analytics_events_quarantine
+
+TYPE COPY
+TARGET_DATASOURCE analytics_events
+
