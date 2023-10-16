@@ -1,10 +1,10 @@
 
-- example_no_negative_numbers:
+- analytics_events_quarantine:
     max_bytes_read: null
     max_time: null
     sql: |
         SELECT
-            number
-        FROM numbers(10)
+            count() as c
+        FROM analytics_events_quarantine
         WHERE
-            number < 0
+            c <= 0
