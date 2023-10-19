@@ -16,4 +16,5 @@
         SELECT count() c, sum(rows) rows
         FROM tinybird.datasources_ops_log
         WHERE datasource_name = 'analytics_events'
-        HAVING rows != 74 and c != 1
+        AND event_type = 'copy'
+        HAVING rows != 74 and c = 1
