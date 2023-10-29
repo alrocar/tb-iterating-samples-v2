@@ -8,6 +8,9 @@
 
     on:
       workflow_dispatch:
+      push:
+        branches:
+          - master
     jobs:
       staging_cd:  # deploy changes to staging workspace 'st_wask_versions_v2'
         uses: tinybirdco/ci/.github/workflows/cd.yml@v1.1.4
