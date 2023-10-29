@@ -31,11 +31,11 @@ SQL >
     from
       analytics_hits
     where
-      timestamp >= (now() - interval 30 minute)
+      timestamp >= (now() - interval {{UInt8(minute, 30)}} minute)
     group by
-      toStartOfMinute(timestamp)
+      t
     order by 
-      toStartOfMinute(timestamp)
+      t
 
 
 
