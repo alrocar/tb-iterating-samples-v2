@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "emeraldwalk.RunOnSave",
+        "github.vscode-github-actions",
+        "GitLab.gitlab-workflow",
+        "oderwat.indent-rainbow",
+        "TinybirdCo.vscode-tinybird-support"
+    ]
+}
