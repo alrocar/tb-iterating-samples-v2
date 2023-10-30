@@ -18,5 +18,5 @@
           tb_deploy: false
           data_project_dir: .
         secrets:
-          admin_token: ${{ secrets.ST_ADMIN_TOKEN }}  # set admin token associated to an account in GitHub secrets
+          tb_admin_token: ${{ secrets.ST_ADMIN_TOKEN }}  # set admin token associated to an account in GitHub secrets
           tb_host: https://api.us-east.aws.tinybird.co
