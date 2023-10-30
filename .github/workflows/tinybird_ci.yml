@@ -12,13 +12,13 @@
         branches:
          - main
          - master
-        types: [opened, reopened, labeled, unlabeled, synchronize]
+        types: [opened, reopened, labeled, unlabeled, synchronize, closed]
 
     concurrency: ${{ github.workflow }}-${{ github.event.pull_request.number }}
 
     jobs:
         ci: # ci using environments from workspace 'wask_versions_v2'
-          uses: tinybirdco/ci/.github/workflows/ci.yml@v1.1.4
+          uses: tinybirdco/ci/.github/workflows/ci.yml@v2.3.0
           with:
             data_project_dir: .
           secrets:
