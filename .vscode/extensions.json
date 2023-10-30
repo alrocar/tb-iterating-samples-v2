@@ -3,6 +3,7 @@
         "eamodio.gitlens",
         "emeraldwalk.RunOnSave",
         "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
         "GitLab.gitlab-workflow",
         "oderwat.indent-rainbow",
         "TinybirdCo.vscode-tinybird-support"
