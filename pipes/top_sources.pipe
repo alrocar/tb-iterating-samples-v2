@@ -20,7 +20,6 @@ SQL >
         from
           analytics_sources_mv
         where
-          1 = 1
           {% if defined(date_from) %}
             date >= {{Date(date_from, description="Starting day for filtering a date range", required=False)}}
           {% else %}
