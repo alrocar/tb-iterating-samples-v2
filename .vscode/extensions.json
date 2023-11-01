@@ -1,7 +1,5 @@
 {
     "recommendations": [
-        "eamodio.gitlens",
-        "emeraldwalk.RunOnSave",
         "github.vscode-github-actions",
         "GitHub.vscode-pull-request-github",
         "GitLab.gitlab-workflow",
