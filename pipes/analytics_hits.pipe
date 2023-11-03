@@ -1,3 +1,5 @@
+VERSION 1
+
 DESCRIPTION >
 	Parsed `page_hit` events, implementing `browser` and `device` detection logic.
 
@@ -20,7 +22,8 @@ SQL >
       JSONExtractString(payload, 'referrer') as referrer,
       JSONExtractString(payload, 'pathname') as pathname,
       JSONExtractString(payload, 'href') as href,
-      lower(JSONExtractString(payload, 'user-agent')) as user_agent
+      lower(JSONExtractString(payload, 'user-agent')) as user_agent,
+      toUInt8OrZero(JSONExtractString(payload, 'element')) as element
     FROM
       analytics_events
     where action = 'page_hit'
@@ -52,7 +55,8 @@ SQL >
         when match(user_agent, 'msie|trident') then 'ie'
         when match(user_agent, 'iphone|ipad|safari') then 'safari'
         else 'Unknown'
-      END as browser
+      END as browser,
+      element
     FROM
       parsed_hits
 

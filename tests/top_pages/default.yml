@@ -1,0 +1,15 @@
+
+- filter_by_element:
+    max_bytes_read: null
+    max_time: null
+    pipe:
+        name: top_pages
+        params:
+            date_from: 2033-09-12
+            date_to: 2033-09-13
+            element: 1
+    sql: |
+        SELECT
+            count() as c
+        FROM top_pages
+        HAVING c < 0
